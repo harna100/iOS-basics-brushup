@@ -33,9 +33,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func bt_plusPressed(_ sender: Any) {
+        changeModes(newMode: .addition)
     }
     
     @IBAction func bt_minusPressed(_ sender: Any) {
+        changeModes(newMode: .subtraction)
     }
     
     @IBAction func bt_clearPressed(_ sender: Any) {
@@ -52,8 +54,12 @@ class ViewController: UIViewController {
     @IBAction func bt_numbPressed(_ sender: Any) {
         let stringValue:String? = (sender as? UIButton)?.titleLabel?.text
         
-        labelString.append(stringValue!)
+        if(lastButtonWasMode){
+            lastButtonWasMode = false
+            labelString = "0"
+        }
         
+        labelString.append(stringValue!)
         updateText()
         
     }
@@ -63,6 +69,11 @@ class ViewController: UIViewController {
         guard let labelInt:Int = Int(labelString) else{
             return
         }
+        
+        if(currentMode == .not_set){
+            savedNum = labelInt
+        }
+        
         lab_totalNum.text = "\(labelInt)"
         
         
@@ -70,7 +81,11 @@ class ViewController: UIViewController {
     
     
     func changeModes(newMode:modes){
-        
+        if(savedNum == 0){
+            return
+        }
+        currentMode = newMode
+        lastButtonWasMode = true
     }
 
 
