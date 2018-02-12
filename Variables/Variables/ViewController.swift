@@ -9,14 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    var name:String = "Paul"
+    
+    @IBOutlet weak var lab_label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        name = "Billy"
-        print(name)
+
+        lab_label.text = "Hello World"
     }
 
     override func didReceiveMemoryWarning() {
