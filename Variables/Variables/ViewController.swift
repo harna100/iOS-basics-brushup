@@ -8,18 +8,21 @@
 
 import UIKit
 
-enum modes {
-    case notSet
-    case addition
-    case subtraction
-    case multiplication
-}
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var lab_intLabel: UILabel!
+    @IBOutlet weak var lab_strLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    
+        let str = "Hello World"
+        let intVar = 5
+        
+        lab_strLabel.text = str
+        lab_intLabel.text = String(intVar)
         
     }
 
