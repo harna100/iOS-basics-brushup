@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        addNumbers()
+        addNumbers(num1: 3, num2: 2)
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,9 +22,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func addNumbers() {
-        let num1:Int = 1
-        let num2:Int = 3
+    func addNumbers(num1:Int, num2:Int) {
         let sum = num1 + num2
         lab_sum.text = "The sum is \(sum)"
     }
