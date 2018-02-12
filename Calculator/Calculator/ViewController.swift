@@ -49,6 +49,26 @@ class ViewController: UIViewController {
     }
     
     @IBAction func bt_equalsPressed(_ sender: Any) {
+        guard let labelInt:Int = Int(labelString) else{
+            return
+        }
+        
+        if(currentMode == .not_set || lastButtonWasMode){
+            return
+        }
+        
+        if(currentMode == .addition){
+            savedNum += labelInt
+        }
+        else if(currentMode == .subtraction){
+            savedNum -= labelInt
+        }
+        
+        
+        currentMode = .not_set
+        labelString = "\(savedNum)"
+        updateText()
+        lastButtonWasMode = true
     }
     
     @IBAction func bt_numbPressed(_ sender: Any) {
