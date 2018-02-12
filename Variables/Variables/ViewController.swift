@@ -8,17 +8,19 @@
 
 import UIKit
 
+enum modes {
+    case notSet
+    case addition
+    case subtraction
+    case multiplication
+}
+
 class ViewController: UIViewController {
-    
-    @IBOutlet weak var lab_label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
-        let score:Int = 10
         
-        lab_label.text = "Hello World, it's day \(score)"
     }
 
     override func didReceiveMemoryWarning() {
