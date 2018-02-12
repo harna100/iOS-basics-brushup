@@ -24,11 +24,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18j-tk-xYk">
+                                <rect key="frame" x="20" y="61" width="73" height="30"/>
+                                <state key="normal" title="Show Sum"/>
+                                <connections>
+                                    <action selector="bt_buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZZj-IW-qy6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="UWm-Hv-jfT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="9Au-ep-Bad"/>
+                            <constraint firstItem="18j-tk-xYk" firstAttribute="top" secondItem="UWm-Hv-jfT" secondAttribute="bottom" constant="20" id="Pg1-3a-IzM"/>
                             <constraint firstItem="UWm-Hv-jfT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="QlT-pD-DG6"/>
+                            <constraint firstItem="18j-tk-xYk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Vpk-28-PuB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UWm-Hv-jfT" secondAttribute="trailing" id="dCr-D8-4mz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

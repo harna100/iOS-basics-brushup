@@ -22,6 +22,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func bt_buttonPressed(_ sender: Any) {
+        addNumbers(num1: Int(arc4random_uniform(50)), num2: Int(arc4random_uniform(50)))
+    }
+    
     func addNumbers(num1:Int, num2:Int) {
         let sum = num1 + num2
         lab_sum.text = "The sum is \(sum)"
