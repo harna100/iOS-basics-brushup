@@ -39,6 +39,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func bt_clearPressed(_ sender: Any) {
+        labelString = "0"
+        currentMode = .not_set
+        savedNum = 0
+        lastButtonWasMode = false
+        lab_totalNum.text = "0"
     }
     
     @IBAction func bt_equalsPressed(_ sender: Any) {
