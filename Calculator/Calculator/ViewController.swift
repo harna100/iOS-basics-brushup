@@ -94,8 +94,12 @@ class ViewController: UIViewController {
             savedNum = labelInt
         }
         
-        lab_totalNum.text = "\(labelInt)"
         
+        let formatter:NumberFormatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        let num:NSNumber = NSNumber(value: labelInt)
+        
+        lab_totalNum.text = formatter.string(from: num)
         
     }
     
