@@ -13,15 +13,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let str:String = "5dfg"
-        let num:Int? = Int(str)
 
-        if(num != nil){
-            print(num!)
+        let str:String = "10"
+        if let num:Int = Int(str){
+            print("\(num)")
         }
         else{
-            print("Not converted")
+            print("convert failed")
         }
+        
+        guard let num:Int = Int(str) else{
+            return
+        }
+        print("Finished! num is \(num)")
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
