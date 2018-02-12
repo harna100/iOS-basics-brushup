@@ -45,10 +45,21 @@ class ViewController: UIViewController {
     }
     
     @IBAction func bt_numbPressed(_ sender: Any) {
+        let stringValue:String? = (sender as? UIButton)?.titleLabel?.text
+        
+        labelString.append(stringValue!)
+        
+        updateText()
+        
     }
     
     
     func updateText(){
+        guard let labelInt:Int = Int(labelString) else{
+            return
+        }
+        lab_totalNum.text = "\(labelInt)"
+        
         
     }
     
