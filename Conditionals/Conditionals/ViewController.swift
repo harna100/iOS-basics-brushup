@@ -10,17 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var lab_toggle: UILabel!
+    @IBOutlet weak var bt_switch: UIButton!
+    
+    var isOn = true
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let score:Int = 100
         
-        if(score > 50000){
-            print("Player gets extra life")
-        }
-        else {
-            print("Not enough points for extra life")
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +25,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func bt_switchPressed(_ sender: Any) {
+        isOn = !isOn
+        lab_toggle.text = isOn ? "On" : "Off"
+        bt_switch.backgroundColor = isOn ? UIColor.green : UIColor.red
 
+    }
+    
 }
 
