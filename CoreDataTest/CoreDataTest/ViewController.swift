@@ -11,11 +11,17 @@ import CoreData
 
 class ViewController: UIViewController {
 
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var context:NSManagedObjectContext!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        createRecords()
+        context = appDelegate.persistentContainer.viewContext
+        
+        
+        createRecord()
+        fetchData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,10 +29,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func createRecords(){
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
+    func createRecord(){
         let entity = NSEntityDescription.entity(forEntityName: "Users", in: context)
         
         let newUser = NSManagedObject(entity: entity!, insertInto: context)
@@ -42,6 +45,21 @@ class ViewController: UIViewController {
             print("Failed to save")
         }
         
+    }
+    
+    func fetchData(){
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName:"Users")
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let result = try context.fetch(request)
+            for data in result as! [NSManagedObject] {
+                print(data.value(forKey: "username") as! String)
+            }
+        }
+        catch{
+            print("Failed to fetch")
+        }
     }
 }
 
