@@ -1,0 +1,12 @@
+PODS:
+  - AccordionMenuSwift (1.2.6)
+
+DEPENDENCIES:
+  - AccordionMenuSwift (~> 1.2.6)
+
+SPEC CHECKSUMS:
+  AccordionMenuSwift: 3e9387944e2ed98966a51733551e0be774a65914
+
+PODFILE CHECKSUM: bf631673a4802a1a8efe7b26282310ecf0faa938
+
+COCOAPODS: 1.4.0

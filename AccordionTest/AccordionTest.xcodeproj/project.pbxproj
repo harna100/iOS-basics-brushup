@@ -14,6 +14,8 @@
 		A5618C96203509D1001AC764 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5618C94203509D1001AC764 /* LaunchScreen.storyboard */; };
 		A5618CA1203509D1001AC764 /* AccordionTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5618CA0203509D1001AC764 /* AccordionTestTests.swift */; };
 		A5618CAC203509D1001AC764 /* AccordionTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5618CAB203509D1001AC764 /* AccordionTestUITests.swift */; };
+		A5618CBC20350F84001AC764 /* AccordionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5618CBB20350F84001AC764 /* AccordionViewController.swift */; };
+		B22988EB1CE5CA0022E181E9 /* Pods_AccordionTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E715CF7C76AE43AB225333FA /* Pods_AccordionTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		31443E504C8DCA2D7C25F375 /* Pods-AccordionTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AccordionTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-AccordionTest/Pods-AccordionTest.release.xcconfig"; sourceTree = "<group>"; };
 		A5618C88203509D1001AC764 /* AccordionTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccordionTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5618C8B203509D1001AC764 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5618C8D203509D1001AC764 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +50,9 @@
 		A5618CA7203509D1001AC764 /* AccordionTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccordionTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5618CAB203509D1001AC764 /* AccordionTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionTestUITests.swift; sourceTree = "<group>"; };
 		A5618CAD203509D1001AC764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5618CBB20350F84001AC764 /* AccordionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionViewController.swift; sourceTree = "<group>"; };
+		AE03C03CC30BB83BB8871CA3 /* Pods-AccordionTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AccordionTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AccordionTest/Pods-AccordionTest.debug.xcconfig"; sourceTree = "<group>"; };
+		E715CF7C76AE43AB225333FA /* Pods_AccordionTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AccordionTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B22988EB1CE5CA0022E181E9 /* Pods_AccordionTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +81,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		353BD60ABB8930A525490AB8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E715CF7C76AE43AB225333FA /* Pods_AccordionTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A9B70C46D2B8C360B2E4134 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE03C03CC30BB83BB8871CA3 /* Pods-AccordionTest.debug.xcconfig */,
+				31443E504C8DCA2D7C25F375 /* Pods-AccordionTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A5618C7F203509D1001AC764 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +105,8 @@
 				A5618C9F203509D1001AC764 /* AccordionTestTests */,
 				A5618CAA203509D1001AC764 /* AccordionTestUITests */,
 				A5618C89203509D1001AC764 /* Products */,
+				3A9B70C46D2B8C360B2E4134 /* Pods */,
+				353BD60ABB8930A525490AB8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +129,7 @@
 				A5618C92203509D1001AC764 /* Assets.xcassets */,
 				A5618C94203509D1001AC764 /* LaunchScreen.storyboard */,
 				A5618C97203509D1001AC764 /* Info.plist */,
+				A5618CBB20350F84001AC764 /* AccordionViewController.swift */,
 			);
 			path = AccordionTest;
 			sourceTree = "<group>";
@@ -132,9 +159,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5618CB0203509D1001AC764 /* Build configuration list for PBXNativeTarget "AccordionTest" */;
 			buildPhases = (
+				5FFD5318C7E9C00F3E55623D /* [CP] Check Pods Manifest.lock */,
 				A5618C84203509D1001AC764 /* Sources */,
 				A5618C85203509D1001AC764 /* Frameworks */,
 				A5618C86203509D1001AC764 /* Resources */,
+				4D1B608FC923E65BF9AA4E2D /* [CP] Embed Pods Frameworks */,
+				4D77367F59D8B7DC7BEA7848 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,12 +284,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4D1B608FC923E65BF9AA4E2D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AccordionTest/Pods-AccordionTest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AccordionMenuSwift/AccordionMenuSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AccordionMenuSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AccordionTest/Pods-AccordionTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D77367F59D8B7DC7BEA7848 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AccordionTest/Pods-AccordionTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FFD5318C7E9C00F3E55623D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AccordionTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A5618C84203509D1001AC764 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A5618C8E203509D1001AC764 /* ViewController.swift in Sources */,
+				A5618CBC20350F84001AC764 /* AccordionViewController.swift in Sources */,
 				A5618C8C203509D1001AC764 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +509,7 @@
 		};
 		A5618CB1203509D1001AC764 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE03C03CC30BB83BB8871CA3 /* Pods-AccordionTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -432,12 +518,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = harna100.chapman.edu.AccordionTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
 		A5618CB2203509D1001AC764 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31443E504C8DCA2D7C25F375 /* Pods-AccordionTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -446,7 +533,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = harna100.chapman.edu.AccordionTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
