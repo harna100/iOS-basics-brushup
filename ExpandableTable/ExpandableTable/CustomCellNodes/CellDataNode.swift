@@ -15,7 +15,10 @@ class CellDataNode {
             return children.count != 0
         }
     }
-    var reuseIdentifier:String! {get{return self.reuseIdentifier}}
+    class func reuseIdentifier()->String {
+        assert(false, "This method must be overriden by the subclass")
+    }
+
     var completionEvents:[()->()]
     var isExpanded:Bool = false
     

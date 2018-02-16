@@ -17,8 +17,18 @@ class ExpandableTableViewController: UITableViewController {
 
     func getCellData() {
         cellDataNodes = []
+        currentlyShown = []
         cellDataNodes.append(
-                CategoryDataNode(categoryName: "Test Cell 1", children: [], completionEvents: [])
+                CategoryDataNode(categoryName: "Test Cell 1", children: [
+                    CategoryDataNode(categoryName: "Test Cell 1a", children: [], completionEvents: []),
+                    CategoryDataNode(categoryName: "Test Cell 1b", children: [
+                        CategoryDataNode(categoryName: "Test Cell 1ba", children: [], completionEvents: []),
+                        CategoryDataNode(categoryName: "Test Cell 1bb", children: [], completionEvents: []),
+                        CategoryDataNode(categoryName: "Test Cell 1bc", children: [], completionEvents: []),
+                        CategoryDataNode(categoryName: "Test Cell 1bd", children: [], completionEvents: [])
+                    ], completionEvents: []),
+                    CategoryDataNode(categoryName: "Test Cell 1c", children: [], completionEvents: [])
+                ], completionEvents: [])
         )
         cellDataNodes.append(
                 CategoryDataNode(categoryName: "Test Cell 2", children: [], completionEvents: [])
@@ -36,6 +46,8 @@ class ExpandableTableViewController: UITableViewController {
     override func viewDidLoad() {
         getCellData()
         super.viewDidLoad()
+        let nib = UINib(nibName: "CategoryTableViewCell", bundle: nil)
+        self.tableView.register(nib, forCellReuseIdentifier: CategoryTableViewCell.reuseIdentifier())
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -72,9 +84,14 @@ class ExpandableTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let row = indexPath.row
+        // TODO figure out how this can be used to dequeue a cell?
+        // let node:CellDataNode = currentlyShown[row]
+
+        var cell = tableView.dequeueReusableCell(withIdentifier: CategoryDataNode.reuseIdentifier(), for: indexPath)
 
         if let castedCell = cell as? CategoryTableViewCell {
+            castedCell.categoryDataNode = currentlyShown[row] as! CategoryDataNode
             castedCell.updateViews()
         }
         //TODO add else ifs as I add cells
@@ -91,15 +108,33 @@ class ExpandableTableViewController: UITableViewController {
         if(cellDataNode.hasChildren && !cellDataNode.isExpanded){
             cellDataNode.isExpanded = true
             // TODO figure out if begin/endUpdates is needed
-            self.tableView.beginUpdates()
-            currentlyShown.insert(contentsOf: cellDataNode.children, at: row)
-            self.tableView.endUpdates()
+//            self.tableView.beginUpdates()
+            currentlyShown.insert(contentsOf: cellDataNode.children, at: row+1)
+            self.tableView.reloadData()
+//            self.tableView.endUpdates()
         }
         else if(cellDataNode.hasChildren && cellDataNode.isExpanded){
             cellDataNode.isExpanded = false
-            self.tableView.beginUpdates()
+//            self.tableView.beginUpdates()
+            // TODO figure out how to also remove sub children (Check sublime for possible answer)
+            closeNodes(nodes: cellDataNode.children, startPos: row)
+
             let offset = row+1
-            currentlyShown.removeSubrange(offset ... offset + cellDataNode.children.count)
+            currentlyShown.removeSubrange(offset ..< offset + cellDataNode.children.count)
+
+            self.tableView.reloadData()
+//            self.tableView.endUpdates()
+        }
+    }
+
+    func closeNodes(nodes:[CellDataNode], startPos:Int){
+        var idx = startPos
+        for node in nodes {
+            idx += 1
+            if(node.isExpanded && node.hasChildren){
+                closeNodes(nodes: node.children, startPos: idx)
+                currentlyShown.removeSubrange(idx ... node.children.count+1)
+            }
         }
     }
 }

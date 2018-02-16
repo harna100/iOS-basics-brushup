@@ -11,7 +11,12 @@ import UIKit
 class CategoryTableViewCell: CellType {
 
     @IBOutlet weak var lab_categoryName: UILabel!
+
     var categoryDataNode:CategoryDataNode!
+    override class func reuseIdentifier()->String {
+        return "CategoryCell"
+    }
+    
     override var cellDataNode: CellDataNode! {
         get {
             return self.categoryDataNode
@@ -34,6 +39,6 @@ class CategoryTableViewCell: CellType {
     }
 
     override func updateViews() {
-        lab_categoryName.text = categoryDataNode.categoryName
+        lab_categoryName.text = categoryDataNode?.categoryName
     }
 }

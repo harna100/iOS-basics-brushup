@@ -12,6 +12,9 @@ import UIKit
 class CellType:UITableViewCell {
     
     var cellDataNode:CellDataNode!
+    class func reuseIdentifier()-> String {
+        assert(false, "This method must be overriden by the subclass")
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -11,10 +11,8 @@ import Foundation
 class CategoryDataNode:CellDataNode{
     
     var categoryName:String
-    override var reuseIdentifier: String! {
-        get {
-            return "Category"
-        }
+    override class func reuseIdentifier() -> String {
+        return "CategoryCell"
     }
 
     init(categoryName:String, children: [CellDataNode], completionEvents: [() -> ()]) {
