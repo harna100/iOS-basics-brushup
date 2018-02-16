@@ -17,9 +17,9 @@ class CategoryDataNode:CellDataNode{
         }
     }
 
-    init(categoryName:String, children: [CellDataNode], completetionEvents: [() -> ()]) {
+    init(categoryName:String, children: [CellDataNode], completionEvents: [() -> ()]) {
         self.categoryName = categoryName
 
-        super.init(children: children, completetionEvents: completetionEvents)
+        super.init(children: children, completionEvents: completionEvents)
     }
 }

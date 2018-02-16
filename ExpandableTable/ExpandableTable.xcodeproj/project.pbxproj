@@ -19,6 +19,7 @@
 		A53E753620369A080081B1AD /* CategoryDataNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53E753520369A080081B1AD /* CategoryDataNode.swift */; };
 		A53E753920369CEB0081B1AD /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53E753720369CEB0081B1AD /* CategoryTableViewCell.swift */; };
 		A53E753A20369CEB0081B1AD /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A53E753820369CEB0081B1AD /* CategoryTableViewCell.xib */; };
+		A53E753C2036A0050081B1AD /* ExpandableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53E753B2036A0050081B1AD /* ExpandableTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		A53E753520369A080081B1AD /* CategoryDataNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDataNode.swift; sourceTree = "<group>"; };
 		A53E753720369CEB0081B1AD /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		A53E753820369CEB0081B1AD /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		A53E753B2036A0050081B1AD /* ExpandableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				A53E7508203693EE0081B1AD /* Assets.xcassets */,
 				A53E750A203693EE0081B1AD /* LaunchScreen.storyboard */,
 				A53E750D203693EE0081B1AD /* Info.plist */,
+				A53E753B2036A0050081B1AD /* ExpandableTableViewController.swift */,
 			);
 			path = ExpandableTable;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				A53E75322036951A0081B1AD /* CellType.swift in Sources */,
 				A53E7502203693EE0081B1AD /* AppDelegate.swift in Sources */,
 				A53E753920369CEB0081B1AD /* CategoryTableViewCell.swift in Sources */,
+				A53E753C2036A0050081B1AD /* ExpandableTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

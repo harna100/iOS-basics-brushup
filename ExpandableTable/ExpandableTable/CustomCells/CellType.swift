@@ -12,7 +12,6 @@ import UIKit
 class CellType:UITableViewCell {
     
     var cellDataNode:CellDataNode!
-    var isExpanded:Bool = false
 
     override func awakeFromNib() {
         super.awakeFromNib()

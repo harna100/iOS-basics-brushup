@@ -16,12 +16,29 @@ class CellDataNode {
         }
     }
     var reuseIdentifier:String! {get{return self.reuseIdentifier}}
-    var completetionEvents:[()->()]
+    var completionEvents:[()->()]
+    var isExpanded:Bool = false
     
     
-    init(children:[CellDataNode], completetionEvents:[()->()]) {
+    init(children:[CellDataNode], completionEvents:[()->()]) {
         self.children = children
-        self.completetionEvents = completetionEvents
+        self.completionEvents = completionEvents
+    }
+
+    func getChildCount() -> Int {
+        var count = 0
+        if(!self.isExpanded){
+            return count
+        }
+        children.forEach { child in
+            if(child.hasChildren){
+                count += child.getChildCount()
+            }
+            count += 1
+         }
+
+
+        return count
     }
     
     
