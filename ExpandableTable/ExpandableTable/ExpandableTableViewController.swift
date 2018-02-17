@@ -28,7 +28,17 @@ class ExpandableTableViewController: UITableViewController {
                         CategoryDataNode(categoryName: "Test Cell L3D", children: [], completionEvents: [])*/
                         SubjectDataNode(subjectName: "Subject 1", children: [], completionEvents: []),
                         SubjectDataNode(subjectName: "Subject 2", children: [], completionEvents: []),
-                        SubjectDataNode(subjectName: "Subject 3", children: [], completionEvents: [])
+                        SubjectDataNode(subjectName: "Subject 3", children: [
+                            QuizDataNode(quizName: "Quiz 1", children: [], completionEvents: []),
+                            QuizDataNode(quizName: "Quiz 2", children: [], completionEvents: []),
+                            QuizDataNode(quizName: "Quiz 3", children: [], completionEvents: []),
+                            QuizDataNode(quizName: "Quiz 4", children: [], completionEvents: []),
+                            QuizDataNode(quizName: "Quiz 5", children: [], completionEvents: []),
+                            QuizDataNode(quizName: "Quiz 6", children: [], completionEvents: []),
+                            QuizDataNode(quizName: "Quiz 7", children: [], completionEvents: []),
+                            QuizDataNode(quizName: "Quiz 8", children: [], completionEvents: []),
+                            QuizDataNode(quizName: "Quiz 9", children: [], completionEvents: [])
+                        ], completionEvents: [])
                     ], completionEvents: []),
                     CategoryDataNode(categoryName: "Test Cell L2C", children: [], completionEvents: [])
                 ], completionEvents: [])
@@ -54,6 +64,9 @@ class ExpandableTableViewController: UITableViewController {
 
         let subjectNib = UINib(nibName: "SubjectTableViewCell", bundle: nil)
         self.tableView.register(subjectNib, forCellReuseIdentifier: SubjectTableViewCell.reuseIdentifier())
+
+        let quizNib = UINib(nibName: "QuizTableViewCell", bundle: nil)
+        self.tableView.register(quizNib, forCellReuseIdentifier: QuizTableViewCell.reuseIdentifier())
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -106,6 +119,14 @@ class ExpandableTableViewController: UITableViewController {
             var cell = tableView.dequeueReusableCell(withIdentifier: SubjectTableViewCell.reuseIdentifier(), for: indexPath)
             if let castedCell = cell as? SubjectTableViewCell {
                 castedCell.subjectDataNode = castedNode
+                castedCell.updateViews()
+            }
+            return cell
+        }
+        else if let castedNode = node as? QuizDataNode {
+            var cell = tableView.dequeueReusableCell(withIdentifier: QuizTableViewCell.reuseIdentifier(), for: indexPath)
+            if let castedCell = cell as? QuizTableViewCell {
+                castedCell.quizDataNode = castedNode
                 castedCell.updateViews()
             }
             return cell
