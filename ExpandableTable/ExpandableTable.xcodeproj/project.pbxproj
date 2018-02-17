@@ -22,6 +22,7 @@
 		A53E753C2036A0050081B1AD /* ExpandableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53E753B2036A0050081B1AD /* ExpandableTableViewController.swift */; };
 		A53E753F2037C76C0081B1AD /* SubjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53E753D2037C76C0081B1AD /* SubjectTableViewCell.swift */; };
 		A53E75402037C76C0081B1AD /* SubjectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A53E753E2037C76C0081B1AD /* SubjectTableViewCell.xib */; };
+		A53E75422037C7CC0081B1AD /* SubjectDataNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53E75412037C7CC0081B1AD /* SubjectDataNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		A53E753B2036A0050081B1AD /* ExpandableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewController.swift; sourceTree = "<group>"; };
 		A53E753D2037C76C0081B1AD /* SubjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectTableViewCell.swift; sourceTree = "<group>"; };
 		A53E753E2037C76C0081B1AD /* SubjectTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubjectTableViewCell.xib; sourceTree = "<group>"; };
+		A53E75412037C7CC0081B1AD /* SubjectDataNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectDataNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 			children = (
 				A53E7533203695570081B1AD /* CellDataNode.swift */,
 				A53E753520369A080081B1AD /* CategoryDataNode.swift */,
+				A53E75412037C7CC0081B1AD /* SubjectDataNode.swift */,
 			);
 			path = CustomCellNodes;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 			files = (
 				A53E753F2037C76C0081B1AD /* SubjectTableViewCell.swift in Sources */,
 				A53E753620369A080081B1AD /* CategoryDataNode.swift in Sources */,
+				A53E75422037C7CC0081B1AD /* SubjectDataNode.swift in Sources */,
 				A53E7504203693EE0081B1AD /* ViewController.swift in Sources */,
 				A53E7534203695570081B1AD /* CellDataNode.swift in Sources */,
 				A53E75322036951A0081B1AD /* CellType.swift in Sources */,

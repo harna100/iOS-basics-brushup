@@ -22,10 +22,13 @@ class ExpandableTableViewController: UITableViewController {
                 CategoryDataNode(categoryName: "Test Cell L1A", children: [
                     CategoryDataNode(categoryName: "Test Cell L2A", children: [], completionEvents: []),
                     CategoryDataNode(categoryName: "Test Cell L2B", children: [
-                        CategoryDataNode(categoryName: "Test Cell L3A", children: [], completionEvents: []),
+                        /*CategoryDataNode(categoryName: "Test Cell L3A", children: [], completionEvents: []),
                         CategoryDataNode(categoryName: "Test Cell L3B", children: [], completionEvents: []),
                         CategoryDataNode(categoryName: "Test Cell L3C", children: [], completionEvents: []),
-                        CategoryDataNode(categoryName: "Test Cell L3D", children: [], completionEvents: [])
+                        CategoryDataNode(categoryName: "Test Cell L3D", children: [], completionEvents: [])*/
+                        SubjectDataNode(subjectName: "Subject 1", children: [], completionEvents: []),
+                        SubjectDataNode(subjectName: "Subject 2", children: [], completionEvents: []),
+                        SubjectDataNode(subjectName: "Subject 3", children: [], completionEvents: [])
                     ], completionEvents: []),
                     CategoryDataNode(categoryName: "Test Cell L2C", children: [], completionEvents: [])
                 ], completionEvents: [])
@@ -46,8 +49,11 @@ class ExpandableTableViewController: UITableViewController {
     override func viewDidLoad() {
         getCellData()
         super.viewDidLoad()
-        let nib = UINib(nibName: "CategoryTableViewCell", bundle: nil)
-        self.tableView.register(nib, forCellReuseIdentifier: CategoryTableViewCell.reuseIdentifier())
+        let categoryNib = UINib(nibName: "CategoryTableViewCell", bundle: nil)
+        self.tableView.register(categoryNib, forCellReuseIdentifier: CategoryTableViewCell.reuseIdentifier())
+
+        let subjectNib = UINib(nibName: "SubjectTableViewCell", bundle: nil)
+        self.tableView.register(subjectNib, forCellReuseIdentifier: SubjectTableViewCell.reuseIdentifier())
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -86,17 +92,31 @@ class ExpandableTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.row
         // TODO figure out how this can be used to dequeue a cell?
-        // let node:CellDataNode = currentlyShown[row]
+        let node:CellDataNode = currentlyShown[row]
 
-        var cell = tableView.dequeueReusableCell(withIdentifier: CategoryDataNode.reuseIdentifier(), for: indexPath)
-
-        if let castedCell = cell as? CategoryTableViewCell {
-            castedCell.categoryDataNode = currentlyShown[row] as! CategoryDataNode
-            castedCell.updateViews()
+        if let castedNode = node as? CategoryDataNode {
+            var cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.reuseIdentifier(), for: indexPath)
+            if let castedCell = cell as? CategoryTableViewCell {
+                castedCell.categoryDataNode = castedNode
+                castedCell.updateViews()
+            }
+            return cell
         }
+        else if let castedNode = node as? SubjectDataNode {
+            var cell = tableView.dequeueReusableCell(withIdentifier: SubjectTableViewCell.reuseIdentifier(), for: indexPath)
+            if let castedCell = cell as? SubjectTableViewCell {
+                castedCell.subjectDataNode = castedNode
+                castedCell.updateViews()
+            }
+            return cell
+        }
+
+
+
+
         //TODO add else ifs as I add cells
 
-        return cell
+        assert(false, "Should not reach this point")
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -116,7 +136,6 @@ class ExpandableTableViewController: UITableViewController {
         else if(cellDataNode.hasChildren && cellDataNode.isExpanded){
             cellDataNode.isExpanded = false
 //            self.tableView.beginUpdates()
-            // TODO figure out how to also remove sub children (Check sublime for possible answer)
             closeNodes(nodes: cellDataNode.children, startPos: row)
 
             let offset = row

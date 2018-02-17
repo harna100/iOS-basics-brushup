@@ -10,6 +10,25 @@ import UIKit
 
 class SubjectTableViewCell: CellType {
 
+    @IBOutlet weak var lab_subjectName: UILabel!
+
+    var subjectDataNode:SubjectDataNode!
+
+    override class func reuseIdentifier() -> String {
+        return "SubjectCell"
+    }
+
+    override var cellDataNode: CellDataNode! {
+        get {
+            return self.subjectDataNode
+        }
+        set {
+
+            self.subjectDataNode = newValue as! SubjectDataNode
+        }
+    }
+
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,5 +39,8 @@ class SubjectTableViewCell: CellType {
 
         // Configure the view for the selected state
     }
-    
+
+    override func updateViews() {
+        lab_subjectName.text = subjectDataNode?.subjectName
+    }
 }
