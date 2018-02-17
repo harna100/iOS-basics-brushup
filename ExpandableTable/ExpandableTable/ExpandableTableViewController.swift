@@ -19,25 +19,25 @@ class ExpandableTableViewController: UITableViewController {
         cellDataNodes = []
         currentlyShown = []
         cellDataNodes.append(
-                CategoryDataNode(categoryName: "Test Cell 1", children: [
-                    CategoryDataNode(categoryName: "Test Cell 1a", children: [], completionEvents: []),
-                    CategoryDataNode(categoryName: "Test Cell 1b", children: [
-                        CategoryDataNode(categoryName: "Test Cell 1ba", children: [], completionEvents: []),
-                        CategoryDataNode(categoryName: "Test Cell 1bb", children: [], completionEvents: []),
-                        CategoryDataNode(categoryName: "Test Cell 1bc", children: [], completionEvents: []),
-                        CategoryDataNode(categoryName: "Test Cell 1bd", children: [], completionEvents: [])
+                CategoryDataNode(categoryName: "Test Cell L1A", children: [
+                    CategoryDataNode(categoryName: "Test Cell L2A", children: [], completionEvents: []),
+                    CategoryDataNode(categoryName: "Test Cell L2B", children: [
+                        CategoryDataNode(categoryName: "Test Cell L3A", children: [], completionEvents: []),
+                        CategoryDataNode(categoryName: "Test Cell L3B", children: [], completionEvents: []),
+                        CategoryDataNode(categoryName: "Test Cell L3C", children: [], completionEvents: []),
+                        CategoryDataNode(categoryName: "Test Cell L3D", children: [], completionEvents: [])
                     ], completionEvents: []),
-                    CategoryDataNode(categoryName: "Test Cell 1c", children: [], completionEvents: [])
+                    CategoryDataNode(categoryName: "Test Cell L2C", children: [], completionEvents: [])
                 ], completionEvents: [])
         )
         cellDataNodes.append(
-                CategoryDataNode(categoryName: "Test Cell 2", children: [], completionEvents: [])
+                CategoryDataNode(categoryName: "Test Cell L1B", children: [], completionEvents: [])
         )
         cellDataNodes.append(
-                CategoryDataNode(categoryName: "Test Cell 3", children: [], completionEvents: [])
+                CategoryDataNode(categoryName: "Test Cell L1C", children: [], completionEvents: [])
         )
         cellDataNodes.append(
-                CategoryDataNode(categoryName: "Test Cell 4", children: [], completionEvents: [])
+                CategoryDataNode(categoryName: "Test Cell L1D", children: [], completionEvents: [])
         )
 
         currentlyShown.append(contentsOf: cellDataNodes)
@@ -119,8 +119,10 @@ class ExpandableTableViewController: UITableViewController {
             // TODO figure out how to also remove sub children (Check sublime for possible answer)
             closeNodes(nodes: cellDataNode.children, startPos: row)
 
-            let offset = row+1
-            currentlyShown.removeSubrange(offset ..< offset + cellDataNode.children.count)
+            let offset = row
+            let rangeToRemove = offset+1 ... offset + cellDataNode.children.count
+            print("Nonrecursive: \(rangeToRemove)")
+            currentlyShown.removeSubrange( rangeToRemove)
 
             self.tableView.reloadData()
 //            self.tableView.endUpdates()
@@ -133,7 +135,10 @@ class ExpandableTableViewController: UITableViewController {
             idx += 1
             if(node.isExpanded && node.hasChildren){
                 closeNodes(nodes: node.children, startPos: idx)
-                currentlyShown.removeSubrange(idx ... node.children.count+1)
+                let rangeToRemove = idx+1 ... idx + node.children.count
+                print("Recursive: \(rangeToRemove)")
+                currentlyShown.removeSubrange(rangeToRemove)
+                node.isExpanded = false
             }
         }
     }
