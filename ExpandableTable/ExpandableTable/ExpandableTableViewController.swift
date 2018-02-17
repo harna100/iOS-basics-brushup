@@ -18,6 +18,13 @@ class ExpandableTableViewController: UITableViewController {
     func getCellData() {
         cellDataNodes = []
         currentlyShown = []
+        let closure:()->() = {
+            let alert = UIAlertController(title: "Example of closure popup", message: "This was called by keeping track of events to call in case of on cell press", preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+            self.present(alert, animated: true)
+        }
         cellDataNodes.append(
                 CategoryDataNode(categoryName: "Test Cell L1A", children: [
                     CategoryDataNode(categoryName: "Test Cell L2A", children: [], completionEvents: []),
@@ -29,7 +36,7 @@ class ExpandableTableViewController: UITableViewController {
                         SubjectDataNode(subjectName: "Subject 1", children: [], completionEvents: []),
                         SubjectDataNode(subjectName: "Subject 2", children: [], completionEvents: []),
                         SubjectDataNode(subjectName: "Subject 3", children: [
-                            QuizDataNode(quizName: "Quiz 1", children: [], completionEvents: []),
+                            QuizDataNode(quizName: "Quiz 1", children: [], completionEvents: [closure]),
                             QuizDataNode(quizName: "Quiz 2", children: [], completionEvents: []),
                             QuizDataNode(quizName: "Quiz 3", children: [], completionEvents: []),
                             QuizDataNode(quizName: "Quiz 4", children: [], completionEvents: []),
