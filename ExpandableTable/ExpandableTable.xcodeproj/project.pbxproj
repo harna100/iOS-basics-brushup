@@ -20,6 +20,8 @@
 		A53E753920369CEB0081B1AD /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53E753720369CEB0081B1AD /* CategoryTableViewCell.swift */; };
 		A53E753A20369CEB0081B1AD /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A53E753820369CEB0081B1AD /* CategoryTableViewCell.xib */; };
 		A53E753C2036A0050081B1AD /* ExpandableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53E753B2036A0050081B1AD /* ExpandableTableViewController.swift */; };
+		A53E753F2037C76C0081B1AD /* SubjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53E753D2037C76C0081B1AD /* SubjectTableViewCell.swift */; };
+		A53E75402037C76C0081B1AD /* SubjectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A53E753E2037C76C0081B1AD /* SubjectTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		A53E753720369CEB0081B1AD /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		A53E753820369CEB0081B1AD /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		A53E753B2036A0050081B1AD /* ExpandableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewController.swift; sourceTree = "<group>"; };
+		A53E753D2037C76C0081B1AD /* SubjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectTableViewCell.swift; sourceTree = "<group>"; };
+		A53E753E2037C76C0081B1AD /* SubjectTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubjectTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,8 @@
 				A53E75312036951A0081B1AD /* CellType.swift */,
 				A53E753720369CEB0081B1AD /* CategoryTableViewCell.swift */,
 				A53E753820369CEB0081B1AD /* CategoryTableViewCell.xib */,
+				A53E753D2037C76C0081B1AD /* SubjectTableViewCell.swift */,
+				A53E753E2037C76C0081B1AD /* SubjectTableViewCell.xib */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -268,6 +274,7 @@
 			files = (
 				A53E750C203693EE0081B1AD /* LaunchScreen.storyboard in Resources */,
 				A53E7509203693EE0081B1AD /* Assets.xcassets in Resources */,
+				A53E75402037C76C0081B1AD /* SubjectTableViewCell.xib in Resources */,
 				A53E7507203693EE0081B1AD /* Main.storyboard in Resources */,
 				A53E753A20369CEB0081B1AD /* CategoryTableViewCell.xib in Resources */,
 			);
@@ -294,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A53E753F2037C76C0081B1AD /* SubjectTableViewCell.swift in Sources */,
 				A53E753620369A080081B1AD /* CategoryDataNode.swift in Sources */,
 				A53E7504203693EE0081B1AD /* ViewController.swift in Sources */,
 				A53E7534203695570081B1AD /* CellDataNode.swift in Sources */,
